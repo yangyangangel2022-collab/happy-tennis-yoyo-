@@ -204,16 +204,16 @@ body { background:var(--bg); color:var(--text); font-family:'Noto Sans SC',sans-
 .modal-overlay { position:fixed; inset:0; background:rgba(0,0,0,.85); z-index:200; display:flex; align-items:center; justify-content:center; padding:20px; backdrop-filter:blur(6px); }
 .modal-overlay.hidden { display:none; }
 .start-modal { background:var(--card); border:1px solid var(--border2); border-radius:20px; width:100%; max-width:400px; overflow:hidden; animation:fadeIn .3s ease; }
-.start-modal-header { padding:20px 22px 14px; border-bottom:1px solid var(--border); text-align:center; position:relative; }
+.start-modal-header { padding:24px 22px 16px; border-bottom:1px solid var(--border); text-align:center; position:relative; }
 .start-modal-header::before { content:''; position:absolute; top:0; left:20%; right:20%; height:1px; background:linear-gradient(90deg,transparent,var(--green),transparent); }
-.start-title { font-family:'Bebas Neue',sans-serif; font-size:30px; letter-spacing:4px; color:var(--green); display:block; }
-.start-subtitle { font-size:11px; color:var(--muted); margin-top:3px; }
-.start-modal-body { padding:16px 22px; }
-.start-section-label { font-size:11px; font-weight:700; letter-spacing:2px; color:var(--muted); margin-bottom:8px; }
-.modal-order-strip { display:flex; gap:5px; flex-wrap:wrap; margin-bottom:16px; }
-.modal-order-chip { display:flex; align-items:center; gap:4px; padding:5px 10px; border-radius:7px; border:1px solid var(--border2); background:var(--bg2); font-size:11px; font-weight:700; color:var(--muted); }
+.start-title { font-family:'Bebas Neue',sans-serif; font-size:36px; letter-spacing:4px; color:var(--green); display:block; margin-bottom:4px; }
+.start-subtitle { font-size:11px; color:var(--muted); }
+.start-modal-body { padding:20px 22px; }
+.start-section-label { font-size:10px; font-weight:700; letter-spacing:3px; color:var(--muted); margin-bottom:10px; display:block; }
+.modal-order-strip { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:20px; }
+.modal-order-chip { display:flex; align-items:center; gap:5px; padding:6px 12px; border-radius:8px; border:1px solid var(--border2); background:var(--bg2); font-size:12px; font-weight:700; color:var(--muted); }
 .modal-order-chip.top4 { border-color:var(--green); color:var(--green); background:var(--green-dim); }
-.modal-order-chip .chip-num { font-family:'Bebas Neue',sans-serif; font-size:13px; opacity:.5; }
+.modal-order-chip .chip-num { font-family:'Bebas Neue',sans-serif; font-size:14px; opacity:.4; }
 .serve-label { font-size:13px; font-weight:700; margin-bottom:10px; color:var(--text); }
 .serve-teams { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:16px; }
 .serve-btn { padding:12px 8px; border-radius:10px; border:2px solid var(--border2); background:var(--bg2); cursor:pointer; display:flex; flex-direction:column; align-items:center; gap:5px; transition:all .15s; }
@@ -231,7 +231,7 @@ body { background:var(--bg); color:var(--text); font-family:'Noto Sans SC',sans-
 @keyframes popIn { from{opacity:0;transform:scale(.7)} to{opacity:1;transform:scale(1)} }
 .win-modal-top { padding:30px 22px 22px; text-align:center; position:relative; overflow:hidden; }
 .win-modal-bg { position:absolute; inset:0; opacity:.05; font-size:120px; display:flex; align-items:center; justify-content:center; pointer-events:none; }
-.win-trophy { font-size:46px; margin-bottom:10px; display:block; }
+.win-trophy { margin-bottom:10px; display:flex; justify-content:center; }
 .win-congrats { font-family:'Bebas Neue',sans-serif; font-size:13px; letter-spacing:4px; color:var(--muted); margin-bottom:5px; }
 .win-team-name { font-family:'Bebas Neue',sans-serif; font-size:34px; letter-spacing:2px; line-height:1.1; margin-bottom:3px; }
 .win-team-name.left { color:var(--green); }
@@ -275,6 +275,33 @@ body { background:var(--bg); color:var(--text); font-family:'Noto Sans SC',sans-
 .setup-header-title { font-family:'Bebas Neue',sans-serif; font-size:22px; letter-spacing:3px; color:var(--text); }
 
 @keyframes fadeIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+/* ── SPIN MODAL ── */
+.spin-modal { background:var(--card); border:1px solid var(--border2); border-radius:20px; width:100%; max-width:340px; overflow:hidden; animation:fadeIn .3s ease; }
+.spin-modal-head { padding:14px 20px; border-bottom:1px solid var(--border); background:var(--card2); display:flex; align-items:center; justify-content:space-between; }
+.spin-match-num { font-family:'Bebas Neue',sans-serif; font-size:11px; letter-spacing:3px; color:var(--green); }
+.spin-title { font-size:11px; font-weight:700; color:var(--muted); letter-spacing:1px; }
+.spin-teams-row { display:flex; align-items:center; padding:16px 20px 0; gap:10px; }
+.spin-team { flex:1; text-align:center; }
+.spin-team-name { font-size:14px; font-weight:900; color:var(--text); line-height:1.3; }
+.spin-team-sub { font-size:11px; color:var(--muted); margin-top:2px; }
+.spin-vs { font-family:'Bebas Neue',sans-serif; font-size:16px; color:var(--dim); flex-shrink:0; padding:0 4px; }
+.spin-arena { display:flex; flex-direction:column; align-items:center; padding:20px 20px 12px; min-height:150px; justify-content:center; }
+.spin-ball-wrap { display:flex; flex-direction:column; align-items:center; gap:12px; cursor:pointer; -webkit-tap-highlight-color:transparent; }
+.spin-ball-svg { filter:drop-shadow(0 6px 20px rgba(200,232,48,0.45)); }
+.spin-ball-wrap:active .spin-ball-svg { transform:scale(0.93); }
+.spin-tap-hint { font-family:'Bebas Neue',sans-serif; font-size:11px; letter-spacing:4px; color:var(--muted); }
+.spin-result { text-align:center; animation:fadeIn .4s ease; }
+.spin-result-label { font-size:10px; font-weight:700; letter-spacing:3px; color:var(--muted); margin-bottom:8px; }
+.spin-result-name { font-family:'Bebas Neue',sans-serif; font-size:28px; letter-spacing:2px; color:var(--green); line-height:1.1; margin-bottom:6px; }
+.spin-result-tag { font-size:11px; color:var(--yellow); font-weight:700; letter-spacing:1px; }
+.spin-actions { display:flex; gap:8px; padding:0 16px 18px; }
+.btn-spin-again { flex:1; padding:11px; background:transparent; color:var(--muted); font-family:'Bebas Neue',sans-serif; font-size:13px; letter-spacing:2px; border:1px solid var(--border2); border-radius:8px; cursor:pointer; transition:all .12s; }
+.btn-spin-again:hover { border-color:var(--green); color:var(--green); }
+.btn-spin-confirm { flex:2; padding:11px; background:var(--green); color:#0c0c0c; font-family:'Bebas Neue',sans-serif; font-size:13px; letter-spacing:2px; border:none; border-radius:8px; cursor:pointer; transition:all .12s; }
+.btn-spin-confirm:hover { background:#4df570; }
+@keyframes spinAnim { 0%{transform:rotate(0deg)} 100%{transform:rotate(1440deg)} }
+.spinning { animation:spinAnim 1.2s cubic-bezier(.2,.8,.4,1) forwards; }
+
 /* ── FOOTER ── */
 .app-footer { display:flex; align-items:center; justify-content:center; gap:10px; padding:24px 0 12px; margin:24px 14px 0; }
 .footer-line { flex:1; height:1px; background:linear-gradient(90deg, transparent, var(--border)); max-width:60px; }
@@ -370,7 +397,7 @@ body { background:var(--bg); color:var(--text); font-family:'Noto Sans SC',sans-
 
       <!-- 开始 -->
       <div style="margin:14px 14px 0;">
-        <button class="btn-begin" id="beginBtn">🎾 &nbsp;确认，开始比赛</button>
+        <button class="btn-begin" id="beginBtn">确认，开始比赛</button>
       </div>
       <div class="app-footer">
         <div class="footer-line"></div>
@@ -447,15 +474,57 @@ body { background:var(--bg); color:var(--text); font-family:'Noto Sans SC',sans-
 <div class="modal-overlay hidden" id="startOverlay">
   <div class="start-modal">
     <div class="start-modal-header">
-      <span class="start-title">🎾 比赛开始！</span>
+      <span class="start-title">比赛开始！</span>
       <div class="start-subtitle">出场顺序已确认 · 请选择发球方</div>
     </div>
     <div class="start-modal-body">
       <div class="start-section-label">出场顺序</div>
       <div class="modal-order-strip" id="modalOrderStrip"></div>
-      <div class="serve-label">第一场谁来发球？</div>
-      <div class="serve-teams" id="serveTeams"></div>
-      <button class="btn-start-game" id="btnStartGame" disabled>确认发球方，开始比赛</button>
+      <button class="btn-start-game" id="btnStartGame">开始比赛</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: SPIN BALL for serve -->
+<div class="modal-overlay hidden" id="spinOverlay">
+  <div class="spin-modal">
+    <div class="spin-modal-head">
+      <div class="spin-match-num" id="spinMatchNum">MATCH 01</div>
+      <div class="spin-title">决定发球方</div>
+    </div>
+    <div class="spin-teams-row">
+      <div class="spin-team" id="spinTeamLeft"></div>
+      <div class="spin-vs">VS</div>
+      <div class="spin-team" id="spinTeamRight"></div>
+    </div>
+    <div style="height:1px;background:var(--border);margin:14px 20px 0;"></div>
+    <div class="spin-arena">
+      <div class="spin-ball-wrap" id="spinBallWrap" onclick="spinBall()">
+        <svg class="spin-ball-svg" id="spinBallSvg" viewBox="0 0 100 100" width="110" height="110">
+          <circle cx="50" cy="50" r="48" fill="#c8e830"/>
+          <circle cx="50" cy="50" r="48" fill="url(#spinShine)" opacity="0.25"/>
+          <path id="spinCurve1" d="M12 36Q30 50 12 64" stroke="white" stroke-width="4" fill="none" stroke-linecap="round" opacity=".7"/>
+          <path id="spinCurve2" d="M88 36Q70 50 88 64" stroke="white" stroke-width="4" fill="none" stroke-linecap="round" opacity=".7"/>
+          <path id="spinCurve3" d="M34 8Q50 26 66 8" stroke="white" stroke-width="4" fill="none" stroke-linecap="round" opacity=".7"/>
+          <path id="spinCurve4" d="M34 92Q50 74 66 92" stroke="white" stroke-width="4" fill="none" stroke-linecap="round" opacity=".7"/>
+          <defs>
+            <radialGradient id="spinShine" cx="35%" cy="30%" r="50%">
+              <stop offset="0%" stop-color="white"/>
+              <stop offset="100%" stop-color="transparent"/>
+            </radialGradient>
+          </defs>
+        </svg>
+        <div class="spin-tap-hint" id="spinTapHint">点击转球</div>
+      </div>
+      <div class="spin-result" id="spinResult" style="display:none;">
+        <div class="spin-result-label" id="spinResultLabel"></div>
+        <div class="spin-result-name" id="spinResultName"></div>
+        <div class="spin-result-tag">● 发球方</div>
+      </div>
+    </div>
+    <div class="spin-actions">
+      <button class="btn-spin-again" id="btnSpinAgain" onclick="spinBall()" style="display:none;">再转一次</button>
+      <button class="btn-spin-confirm" id="btnSpinConfirm" onclick="confirmSpin()" style="display:none;">确认，开始记分</button>
     </div>
   </div>
 </div>
@@ -465,8 +534,13 @@ body { background:var(--bg); color:var(--text); font-family:'Noto Sans SC',sans-
   <div class="win-modal">
     <div class="win-modal-top">
       <div class="confetti-wrap" id="confettiWrap"></div>
-      <div class="win-modal-bg">🏆</div>
-      <span class="win-trophy">🏆</span>
+      <div class="win-modal-bg" style="font-size:100px;opacity:.05;">★</div>
+      <div class="win-trophy">
+        <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="var(--yellow)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M8 21h8M12 17v4"/><path d="M5 4h14v8a7 7 0 0 1-14 0V4z"/>
+          <path d="M5 8H2a1 1 0 0 0-1 1v1a4 4 0 0 0 4 4M19 8h3a1 1 0 0 1 1 1v1a4 4 0 0 1-4 4"/>
+        </svg>
+      </div>
       <div class="win-congrats">CONGRATULATIONS</div>
       <div class="win-team-name" id="winTeamName"></div>
       <div class="win-players" id="winPlayers"></div>
@@ -808,25 +882,7 @@ function renderAllMatches(){
 
       let actionHTML='';
       if(chosenServe===undefined){
-        const leftLabel=isSingle?round.team1[0]:round.team1[0]+'<br>'+round.team1[1];
-        const rightLabel=isSingle?round.team2[0]:round.team2[0]+'<br>'+round.team2[1];
-        actionHTML=`<div class="match-start-row"><button class="btn-start-match" onclick="expandServe(${idx})">▶ &nbsp;开始本场</button></div>
-        <div class="serve-panel" id="servepanel-${idx}">
-          <div class="serve-panel-label">🎾 随机发球 · 可切换</div>
-          <div class="serve-mini-teams">
-            <button class="serve-mini-btn" id="smb-${idx}-0" onclick="selectMatchServe(${idx},0)">
-              <div class="serve-mini-ball">🎾</div>
-              <div class="serve-mini-names">${leftLabel}</div>
-              <div class="serve-mini-tag">${isSingle?'发球':'左队发球'}</div>
-            </button>
-            <button class="serve-mini-btn" id="smb-${idx}-1" onclick="selectMatchServe(${idx},1)">
-              <div class="serve-mini-ball">🎾</div>
-              <div class="serve-mini-names">${rightLabel}</div>
-              <div class="serve-mini-tag">${isSingle?'发球':'右队发球'}</div>
-            </button>
-          </div>
-          <button class="btn-confirm-serve" onclick="confirmMatchServe(${idx})">确认发球，开始记分</button>
-        </div>`;
+        actionHTML=`<div class="match-start-row"><button class="btn-start-match" onclick="expandServe(${idx})">▶ &nbsp;开始本场 · 转球决定发球</button></div>`;
       } else {
         const leftLabel=isSingle?`🏆 ${round.team1[0]} 赢`:'🏆 左队赢';
         const rightLabel=isSingle?`🏆 ${round.team2[0]} 赢`:'🏆 右队赢';
@@ -857,25 +913,74 @@ function addMoreRounds(){
   updateMatchBadge();
 }
 
-/* ── EXPAND SERVE ── */
+/* ── SPIN BALL for serve ── */
+let spinCurrentIdx = null;
+let spinResult = null;
+
 function expandServe(idx){
-  const panel=document.getElementById('servepanel-'+idx);
-  const startRow=document.querySelector('#match-'+idx+' .match-start-row');
-  if(!panel) return;
-  panel.classList.add('open');
-  if(startRow) startRow.style.display='none';
-  const rand=Math.random()<0.5?0:1;
-  selectMatchServe(idx,rand);
+  // Open spin modal instead of inline panel
+  const round = state.schedule[idx];
+  spinCurrentIdx = idx;
+  spinResult = null;
+
+  document.getElementById('spinMatchNum').textContent = 'MATCH ' + String(idx+1).padStart(2,'0');
+  // Team labels
+  const isSingle = round.isSingle;
+  document.getElementById('spinTeamLeft').innerHTML = isSingle
+    ? `<div class="spin-team-name">${round.team1[0]}</div>`
+    : `<div class="spin-team-name">${round.team1[0]}</div><div class="spin-team-sub">${round.team1[1]}</div>`;
+  document.getElementById('spinTeamRight').innerHTML = isSingle
+    ? `<div class="spin-team-name">${round.team2[0]}</div>`
+    : `<div class="spin-team-name">${round.team2[0]}</div><div class="spin-team-sub">${round.team2[1]}</div>`;
+
+  // Reset modal state
+  document.getElementById('spinBallWrap').style.display='flex';
+  document.getElementById('spinResult').style.display='none';
+  document.getElementById('spinTapHint').style.display='block';
+  document.getElementById('btnSpinAgain').style.display='none';
+  document.getElementById('btnSpinConfirm').style.display='none';
+  document.getElementById('spinBallSvg').classList.remove('spinning');
+
+  document.getElementById('spinOverlay').classList.remove('hidden');
 }
-function selectMatchServe(idx,side){
-  document.querySelectorAll('#smb-'+idx+'-0,#smb-'+idx+'-1').forEach(b=>b.classList.remove('selected'));
-  const btn=document.getElementById('smb-'+idx+'-'+side);
-  if(btn) btn.classList.add('selected');
-  document.getElementById('servepanel-'+idx).dataset.tempServe=side;
+
+function spinBall(){
+  const ball = document.getElementById('spinBallSvg');
+  ball.classList.remove('spinning');
+  void ball.offsetWidth; // reflow to restart animation
+  ball.classList.add('spinning');
+  document.getElementById('spinTapHint').textContent = '转动中...';
+  document.getElementById('btnSpinAgain').style.display='none';
+  document.getElementById('btnSpinConfirm').style.display='none';
+  document.getElementById('spinResult').style.display='none';
+
+  setTimeout(()=>{
+    ball.classList.remove('spinning');
+    // Random result
+    spinResult = Math.random() < 0.5 ? 0 : 1;
+    const round = state.schedule[spinCurrentIdx];
+    const isSingle = round.isSingle;
+    const winTeam = spinResult===0 ? round.team1 : round.team2;
+    const label = spinResult===0 ? '左队发球' : '右队发球';
+
+    document.getElementById('spinBallWrap').style.display='none';
+    const resultEl = document.getElementById('spinResult');
+    resultEl.style.display='block';
+    resultEl.style.textAlign='center';
+    document.getElementById('spinResultLabel').textContent = '发球方';
+    document.getElementById('spinResultName').innerHTML = isSingle
+      ? winTeam[0]
+      : winTeam[0] + '<br>' + winTeam[1];
+    document.getElementById('spinResult').querySelector('.spin-result-tag').textContent = spinResult===0 ? '← 左队发球' : '右队发球 →';
+    document.getElementById('btnSpinAgain').style.display='block';
+    document.getElementById('btnSpinConfirm').style.display='block';
+  }, 1250);
 }
-function confirmMatchServe(idx){
-  const panel=document.getElementById('servepanel-'+idx);
-  state.matchServeSide[idx]=parseInt(panel.dataset.tempServe);
+
+function confirmSpin(){
+  if(spinResult===null) return;
+  state.matchServeSide[spinCurrentIdx] = spinResult;
+  document.getElementById('spinOverlay').classList.add('hidden');
   renderAllMatches();
 }
 
@@ -884,7 +989,25 @@ function recordWin(roundIdx, teamIdx){
   if(state.results[roundIdx]!==undefined) return;
   const round=state.schedule[roundIdx];
   state.results[roundIdx]=teamIdx;
-  (teamIdx===0?round.team1:round.team2).forEach(p=>{ state.scores[p]=(state.scores[p]||0)+1; });
+  // Doubles: if dup round, only score the NON-duplicate team if they win
+  // Singles: always score
+  if(round.isSingle){
+    (teamIdx===0?round.team1:round.team2).forEach(p=>{ state.scores[p]=(state.scores[p]||0)+1; });
+  } else if(round.isDup){
+    // Figure out which team is the dup pair
+    const k0=pairKey(round.team1[0],round.team1[1]);
+    const k1=pairKey(round.team2[0],round.team2[1]);
+    // We need to know which pairs were dup — check dupInfo
+    const team0IsDup=round.dupInfo.some(d=>d===round.team1.join(' · '));
+    const team1IsDup=round.dupInfo.some(d=>d===round.team2.join(' · '));
+    // Only score if winning team is NOT a dup pair
+    const winTeamIsDup = teamIdx===0 ? team0IsDup : team1IsDup;
+    if(!winTeamIsDup){
+      (teamIdx===0?round.team1:round.team2).forEach(p=>{ state.scores[p]=(state.scores[p]||0)+1; });
+    }
+  } else {
+    (teamIdx===0?round.team1:round.team2).forEach(p=>{ state.scores[p]=(state.scores[p]||0)+1; });
+  }
   renderAllMatches();
   renderScoreUI();
   updateMatchBadge();
@@ -899,16 +1022,21 @@ function renderScoreUI(){
   const hasScores=names.some(p=>(scores[p]||0)>0);
   const sorted=hasScores?[...names].sort((a,b)=>(scores[b]||0)-(scores[a]||0)):[...names];
   const maxScore=Math.max(...sorted.map(p=>scores[p]||0),1);
+  // Find the lowest score and mark ALL players with that score
+  const minScore=Math.min(...sorted.map(p=>scores[p]||0));
   const el=document.getElementById('scoreList');
   el.innerHTML='';
   sorted.forEach((name,i)=>{
-    const pts=scores[name]||0, isFirst=i===0&&hasScores, isLast=i===sorted.length-1;
+    const pts=scores[name]||0;
+    const isFirst=i===0&&hasScores&&pts>0;
+    // All players tied at the bottom buy coffee (only when game has started)
+    const isLast=hasScores&&pts===minScore;
     const row=document.createElement('div');
     row.className='score-row'+(isFirst?' rank1':'')+(isLast?' last':'');
     row.innerHTML=`
       <div class="score-rank">${i+1}</div>
       <div class="score-center">
-        <div class="score-name">${name}${isFirst&&pts>0?' 🏅':''}</div>
+        <div class="score-name">${name}${isFirst?' ★':''}</div>
         <div class="score-bar-track"><div class="score-bar-fill" style="width:${hasScores?Math.round((pts/maxScore)*100):0}%"></div></div>
       </div>
       <div class="score-right">
@@ -929,33 +1057,19 @@ function openStartModal(order, firstRound){
     chip.innerHTML=`<span class="chip-num">${i+1}</span>${name}`;
     strip.appendChild(chip);
   });
-  const serveEl=document.getElementById('serveTeams');
-  serveEl.innerHTML='';
-  if(firstRound){
-    [0,1].forEach(side=>{
-      const team=side===0?firstRound.team1:firstRound.team2;
-      const btn=document.createElement('button');
-      btn.className='serve-btn';
-      btn.innerHTML=`<div class="serve-btn-ball">🎾</div><div class="serve-btn-names">${team[0]}<br>${team[1]}</div><div class="serve-btn-tag">${side===0?'左队':'右队'} 发球</div>`;
-      btn.onclick=()=>{ state.serveTeam=side; document.querySelectorAll('.serve-btn').forEach(b=>b.classList.remove('selected')); btn.classList.add('selected'); document.getElementById('btnStartGame').disabled=false; };
-      serveEl.appendChild(btn);
-    });
-    const rand=Math.random()<0.5?0:1;
-    state.serveTeam=rand;
-    serveEl.children[rand].classList.add('selected');
-    document.getElementById('btnStartGame').disabled=false;
-  }
+  // Serve decided by spin ball after game starts
   document.getElementById('startOverlay').classList.remove('hidden');
 }
 
 document.getElementById('btnStartGame').addEventListener('click',()=>{
   document.getElementById('startOverlay').classList.add('hidden');
   state.started=true;
-  if(state.serveTeam!==null) state.matchServeSide[0]=state.serveTeam;
   renderAllMatches();
   renderScoreUI();
   updateMatchBadge();
   switchPage('match');
+  // Open spin modal for first match automatically
+  setTimeout(()=>expandServe(0), 300);
 });
 
 /* ── WIN MODAL ── */
